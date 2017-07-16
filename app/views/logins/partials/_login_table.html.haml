@@ -1,0 +1,23 @@
+%table.highlight.centered.bordered.responsive-table
+  %thead
+    %tr
+      %th ID
+      %th Provider
+      %th Country
+      %th Status
+      %th Accounts
+      %th Actions
+  %tbody
+    %tr
+      - @logins.each do |login|
+        = login_modal(login)
+        %tr
+          %td= show_login(login.id)
+          %td= login.provider
+          %td= login.country
+          %td= login.status
+          %td= index_accounts(login)
+          %td
+            = refresh_button(login)
+            = reconnect_button(login.id)
+            = destroy_button(login.id)

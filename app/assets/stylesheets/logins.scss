@@ -1,0 +1,84 @@
+.logins, .accounts, .transactions, .session, .registration, .password, .create {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 80%;
+}
+
+select {
+  display: block!important;
+}
+
+.session, .registration, .password {
+  height: 100%;
+}
+
+.create {
+  height: 90%;
+}
+
+.registration.edit {
+  height: 130%;
+}
+
+.flex {
+  width: 60%;
+  .edit {
+  width: 100%;
+}}
+
+#devise_button {
+  width: 150px;
+}
+
+.no-logins h4, h3, h2, h1 {
+  font-family: 'Roboto Thin';
+  font-weight: 100;
+  color: #0097a7;
+}
+
+#error_explanation h2, .loading {
+  display: none;
+}
+
+.alert, #error_explanation {
+  color: rgba(255, 0, 0, 0.55);
+}
+
+.done {
+  color: rgb(106, 220, 111);
+  width: 100%;
+  font-size: 55vh;
+}
+
+.done-text {
+  margin-top: -10px;
+}
+
+.header {
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+
+table, .login-list, .account-list, .transaction-list {
+  width: 100%;
+  margin: auto;
+}
+
+.determinate {
+  width: 0;
+}
+
+@keyframes rotate360 {
+  to {
+    transform: rotate(-360deg);
+}}
+
+.rotate {
+  animation: 2s rotate360 infinite linear;
+}

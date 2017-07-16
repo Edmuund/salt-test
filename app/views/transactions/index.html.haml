@@ -1,0 +1,26 @@
+.transactions.container
+  .transaction-list.center-align
+    %h3.header Transactions:
+    %table.highlight.centered.bordered.responsive-table
+      %thead
+        %tr
+          %th ID
+          %th Made on
+          %th Category
+          %th Description
+          %th Amount
+          %th Currency
+      %tbody
+        %tr
+          - @transactions.each do |transaction|
+            = transaction_modal(transaction)
+            %tr
+              %td= show_transaction(transaction)
+              %td= transaction.made_on
+              %td= transaction.category
+              %td= transaction.description
+              %td= transaction.amount
+              %td= transaction.currency
+    %br
+    %a.waves-effect.waves-light.btn{ href: login_accounts_path(params[:login_id]) } <- Back
+    %a.waves-effect.waves-light.btn{ href: root_path } Logins ->

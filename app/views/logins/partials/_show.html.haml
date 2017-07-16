@@ -1,0 +1,45 @@
+.modal{ id: login.id}
+  .modal-content
+    %p
+      ID:
+      %span= login.id
+    .divider
+    %p
+      Username:
+      %span= login.username
+    .divider
+    %p
+      Provider:
+      %span= login.provider
+    .divider
+    %p
+      Country:
+      %span= login.country
+    .divider
+    %p
+      Status:
+      %span= login.status
+    .divider
+    %p
+      Accounts:
+      %span= login.accounts.count
+    .divider
+    %p
+      Transactions:
+      %span= login.transactions.count
+    .divider
+    %p
+      Error:
+      %span= error(login.error)
+    .divider
+    %p
+      Created at:
+      %span= localtime(login.created_at)
+    .divider
+    %p
+      Updated at:
+      %span= localtime(login.updated_at)
+    .divider
+    %p
+      Next refresh possible at:
+      %span= localtime(login.next_refresh)

@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
+    = render 'layouts/favicon'
+    %meta{name: 'viewport', content: 'width=device-width', 'initial-scale': '1.0'}/
+    %title SaltEdge - Test App
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = surround '<!--[if lt IE 9]> -->'.html_safe, '<!-- <![endif]-->'.html_safe do
+      %script{src: '//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js'}
+
+  %body{style: "height: #{height}"}
+    - if user_signed_in? && @disable_nav != true
+      = render 'layouts/navbar'
+    - unless @disable_alerts
+      %p.center-align.flow-text.alert= alert
+
+    = yield

@@ -1,0 +1,25 @@
+.accounts.container
+  .account-list.center-align
+    %h3.header Accounts:
+    %table.highlight.centered.bordered.responsive-table
+      %thead
+        %tr
+          %th ID
+          %th Name
+          %th Balance
+          %th Currency
+          %th Nature
+          %th Transactions
+      %tbody
+        %tr
+          - @accounts.each do |account|
+            = account_modal(account)
+            %tr
+              %td= account.identifier
+              %td= show_account(account)
+              %td= account.balance
+              %td= account.currency
+              %td= account.nature
+              %td= index_transactions(account)
+    %br
+    %a.waves-effect.waves-light.btn{ href: root_path } <- Back

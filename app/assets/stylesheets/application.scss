@@ -1,0 +1,40 @@
+@import "materialize/components/color";
+$primary-color: color("cyan", "darken-1") !default;
+$secondary-color: color("cyan", "darken-2") !default;
+@import 'materialize';
+@import '//fonts.googleapis.com/icon?family=Material+Icons';
+@import "*";
+
+.modal-content {
+  p {
+    text-align: left;
+    font-weight: bold;
+
+  }
+  span {
+    float: right;
+    font-weight: normal;
+  }
+  ul {
+    width: 70%;
+    float: right!important;
+    li {
+      text-align: left;
+      span {
+        float: right;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .brand-logo {
+    margin-left: 15px!important;
+  }
+}
+
+@media only screen and (max-width: 992px) and (max-height: 560px) {
+  body {
+    height: auto!important;
+  }
+}

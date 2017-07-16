@@ -1,0 +1,43 @@
+.modal{ id: transaction.identifier}
+  .modal-content
+    %p
+      ID:
+      %span= transaction.identifier
+    .divider
+    %p
+      Description:
+      %span= transaction.description
+    .divider
+    %p
+      Status:
+      %span= transaction.status
+    .divider
+    %p
+      Amount:
+      %span= transaction.amount
+    .divider
+    %p
+      Currency:
+      %span= transaction.currency
+    .divider
+    %p
+      Extra:
+      %span
+        account balance snapshot:
+        = transaction.account_balance_snapshot
+        %br
+        categorization confidence:
+        = transaction.categorization_confidence
+    %br
+    .divider
+    %p
+      Category:
+      %span= transaction.category
+    .divider
+    %p
+      Mode:
+      %span= transaction.mode
+    .divider
+    %p
+      Made on:
+      %span= transaction.made_on

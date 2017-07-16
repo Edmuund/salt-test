@@ -1,0 +1,11 @@
+%nav
+  .nav-wrapper
+    = link_to 'SaltTest', root_path, class: 'brand-logo'
+    %a{href: '#', 'data-activates': 'mobile', class: 'button-collapse'}
+      %i.material-icons menu
+    %ul.right.hide-on-med-and-down
+      %li= link_to current_user.email, edit_user_registration_path
+      %li= link_to 'Exit', destroy_user_session_path, method: 'delete'
+    %ul.side-nav#mobile
+      %li= link_to 'Settings', edit_user_registration_path
+      %li= link_to 'Exit', destroy_user_session_path, method: 'delete'

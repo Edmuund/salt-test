@@ -1,0 +1,15 @@
+= form_with model: @login, autocomplete: false, id: 'new_login', local: true do |f|
+  .field
+    = f.label :bank
+    = f.select :bank, ['Fake Bank Simple']
+  %br
+  .field
+    = f.label :username
+    = f.text_field :username, class: 'validate', id: :login_username, required: true
+  .field
+    = f.label :password
+    = f.password_field :pass, class: 'validate', id: :login_password, required: true
+  %br
+  .actions.center-align
+    %button.waves-effect.waves-light.btn#devise_button{ type: 'submit', name: 'commit', 'data-disable-with': 'Connect'} Connect
+    = render 'logins/partials/progress'

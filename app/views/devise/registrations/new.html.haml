@@ -1,0 +1,23 @@
+.center-align.flow-text= devise_error_messages!
+.registration.container
+  .flex
+    %h3.center-align Sign Up
+    %br/
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .field
+        = f.label :email
+        = f.email_field :email, class: 'validate', required: true
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: 'off', 'minlength': 6, class: 'validate', required: true
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: 'off', 'minlength': 6, class: 'validate', require: true
+      %br/
+      .actions.center-align
+        %button.waves-effect.waves-light.btn#devise_button{ type: 'submit', name: 'commit', 'data-disable-with': 'Sign Up'} Sign Up
+    %br/
+    .center-align
+      = link_to 'Sign in', new_user_session_path
+      %br
+      = link_to 'Forgot your password?', new_user_password_path

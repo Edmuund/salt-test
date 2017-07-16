@@ -1,0 +1,11 @@
+.create.container
+  .flex
+    %i.material-icons.center-align.done done
+    %h1.center-align.done-text Done!
+    %p.center-align You can now close this window.
+
+:javascript
+  window.onunload = function(){
+    window.opener.location.reload();
+    window.close();
+  };

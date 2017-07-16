@@ -1,0 +1,60 @@
+.modal{ id: account.identifier}
+  .modal-content
+    %p
+      ID:
+      %span= account.identifier
+    .divider
+    %p
+      Name:
+      %span= account.name
+    .divider
+    %p
+      Currency:
+      %span= account.currency
+    .divider
+    %p
+      Balance:
+      %span= account.balance
+    .divider
+    %p
+      Nature:
+      %span= account.nature
+    .divider
+    %p
+      Transactions:
+      %span= account.transactions.count
+    .divider
+    %p
+      Extra:
+      %span
+        %ul
+          %li
+            iban:
+            %span= account.iban
+          %li
+            cards:
+            %span= cards(account.cards)
+          %li
+            swift:
+            %span= account.swift
+          %li
+            client name:
+            %span= account.client_name
+          %li
+            account name:
+            %span= account_filter(account.account_name)
+          %li
+            account number:
+            %span= account_filter(account.account_number)
+          %li
+            available amount:
+            %span= account.available_amount
+          %li
+            credit limit:
+            %span= account.credit_limit
+          %li
+            posted transactions:
+            %span= account.posted
+          %li
+            pending transactions:
+            %span= account.pending

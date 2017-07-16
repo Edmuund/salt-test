@@ -1,0 +1,19 @@
+.create.container
+  .flex
+    %h3.center-align Reconnect Login
+    %br
+    = form_with model: @login, url: reconnect_login_path, method: :put, autocomplete: false, id: 'new_login', local: true do |f|
+      .field
+        = f.label :bank
+        = f.select :bank, ['Fake Bank Simple'], {}, disabled: true
+      %br
+      .field
+        = f.label :username
+        = f.text_field :username, readonly: true, id: :login_username, value: @login.username, required: true
+      .field
+        = f.label :password
+        = f.password_field :pass, class: 'validate', id: :login_password, required: true
+      %br
+      .actions.center-align
+        %button.waves-effect.waves-light.btn#devise_button{ type: 'submit', name: 'commit', 'data-disable-with': 'Connect' } Connect
+        = render 'logins/partials/progress'
