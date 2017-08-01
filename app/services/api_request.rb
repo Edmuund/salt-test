@@ -4,7 +4,6 @@ module ApiRequest
     require 'single_request'
 
     class Customer < SingleRequest
-
       def initialize(email)
         @email = email
       end
@@ -22,7 +21,6 @@ module ApiRequest
     end
 
     class Login < SingleRequest
-
       class << self
         attr_accessor :stage
       end
@@ -79,7 +77,7 @@ module ApiRequest
         parameters = { data: { fetch_type: 'recent' } }
         SingleRequest.new(url, action, headers, parameters).run
         return SingleRequest.error unless SingleRequest.error.nil? && show_login
-        login_attributes
+        return @login_attributes unless login_attributes
         return SingleRequest.error unless fetch_accounts && fetch_transactions
         @login_attributes
       end
@@ -200,8 +198,8 @@ module ApiRequest
 
       def fetch_pending
         if @existing_login
-          pending_transactions = @existing_login.transactions.select { |t| t.status == 'pending' }
-          pending_transactions.each(&:destroy!) unless pending_transactions.empty?
+          pending = @existing_login.transactions.select { |t| t.status == 'pending' }
+          pending.each(&:delete)
         end
         url        = 'https://www.saltedge.com/api/v3/transactions/pending'
         action     = :get

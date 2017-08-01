@@ -33,11 +33,4 @@ $(document).on 'turbolinks:load', ->
   $('#refresh').click ->
     $(this).addClass 'rotate'
     return
-
-  # reconnect login
-  $('.reconnect').on 'click', ->
-    url = $('.reconnect').data('url')
-    myWindow = window.open(url, 'ReconnectLogin', 'width=600, height=600')
-    return
-
 return

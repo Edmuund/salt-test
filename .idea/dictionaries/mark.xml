@@ -19,6 +19,7 @@
       <w>ethon</w>
       <w>execjs</w>
       <w>fakebank</w>
+      <w>falsey</w>
       <w>fsevent</w>
       <w>github</w>
       <w>globalid</w>
@@ -42,6 +43,7 @@
       <w>unirest</w>
       <w>updatable</w>
       <w>validatable</w>
+      <w>webmock</w>
       <w>websocket</w>
     </words>
   </dictionary>

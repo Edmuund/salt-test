@@ -29,7 +29,7 @@ module LoginsHelper
   def reconnect_button(id)
     link_to 'loop', '#',
             class: 'material-icons reconnect', title: 'Reconnect',
-            data: { url: reconnect_login_path(id) }
+            onClick: "window.open('#{reconnect_login_path(id)}', 'ReconnectLogin', 'width=600, height=600')"
   end
 
   def destroy_button(id)

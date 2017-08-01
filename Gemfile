@@ -27,6 +27,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'meta_request'
   gem 'mysql2', '>= 0.3.18', '< 0.5'
+  gem 'rspec-rails', '~> 3.5'
+end
+
+group :test do
+  gem 'rails-controller-testing'
+  gem 'webmock'
 end
 
 group :development do

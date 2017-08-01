@@ -22,7 +22,6 @@ class CustomersController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation,
-                                 :customer_id, :customer_secret)
+    params.require(:user).permit(%i[email password password_confirmation customer_id customer_secret])
   end
 end

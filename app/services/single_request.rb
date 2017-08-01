@@ -42,8 +42,6 @@ module ApiRequest
           body = JSON.parse(response.body)
           if response.success?
             SingleRequest.response = body['data']
-          elsif response.timed_out?
-            SingleRequest.error = 'It took too long to process the request. Please, try again.'
           else
             @message = body['error_message']
             @message = filter_data
@@ -61,7 +59,7 @@ module ApiRequest
         filtered[3] = '<filtered>'
         filtered.join(' ')
       elsif resource_exists?
-        @message.split('with').first
+        @message.split('with').first.rstrip
       else
         @message
       end
